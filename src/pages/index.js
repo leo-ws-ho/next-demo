@@ -1,13 +1,28 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import styles from '@/styles/Home.module.css';
-import Link from 'next/link';
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 function Button() {
-  return (<button>Click me!</button>);
+  return <button>Click me!</button>;
+}
+
+function Form() {
+  return (
+    <form name="contact" method="POST" data-netlify="true">
+      <p>
+        <label>
+          Your Name: <input type="text" name="name" />
+        </label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+  );
 }
 
 export default function Home() {
@@ -20,9 +35,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Button></Button>
+        <Form></Form>
         <div className={styles.description}>
-          <h1 className='title'>Read <Link href='/posts/first-post'>this page!</Link></h1>
+          <h1 className="title">
+            Read <Link href="/posts/first-post">this page!</Link>
+          </h1>
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>src/pages/index.js</code>
@@ -33,7 +50,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -117,5 +134,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
