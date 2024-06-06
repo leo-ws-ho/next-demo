@@ -12,7 +12,8 @@ function Button() {
 
 function Form() {
   return (
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST">
+      <input type="hidden" name="form-name" value="contact"></input>
       <label htmlFor="name">Name</label> <br />
       <input type="text" id="name" name="name" required />
       <label htmlFor="email">Email</label> <br />
