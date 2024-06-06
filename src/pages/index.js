@@ -13,14 +13,13 @@ function Button() {
 function Form() {
   return (
     <form name="contact" method="POST" data-netlify="true">
-      <p>
-        <label>
-          Your Name: <input type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
+      <label htmlFor="name">Name</label> <br />
+      <input type="text" id="name" name="name" required />
+      <label htmlFor="email">Email</label> <br />
+      <input type="email" id="email" name="email" required />
+      <label htmlFor="message">Message</label> <br />
+      <textarea id="message" name="message" required />
+      <input type="submit" value="Submit message" />
     </form>
   );
 }
